@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>szajonvaglak.hu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/ikon.png">
+</head>
+<body>
+
+    <h1 class="fo-cim">szajonvaglak.hu</h1>
+
+    <div class="alkalmazas-tarolo">
+
+        <div class="technika-kartya">
+            <h2>Oki Goshi (Csípő dobás)</h2>
+            <span class="cimke">Pozíció: Csipő a csípőhöz</span>
+            
+            <p>Ha bármi módón elég kezözel kerülsz az ellenfélhez, akkor a csípődet az ő csípője/dereka alá beakasztva ki tudod tolni a lábaddal a súlyát, és amikor a levegőben van onnan könnyen mozdítható a föld felé :D</p>
+            
+            <img src="images/oki-goshi.png" alt="oki-sohsi">
+        </div>
+
+
+
+        <div class="technika-kartya">
+            <h2>Tomoe Nage</h2>
+            <span class="cimke">Pozíció: Talp a belső combhoz</span>
+            
+            <p>AZ ellenfeled ruháját megragadva, bele taposol a belső combjába és hátra dőlsz teljes testtel miközben magara rántod az ellenfelet, ezután a lábaddal elrúgod magadtól amíg ő a levegőben van.</p>
+            
+            <img src="images/tomoe-nage.png" alt="tomoe-nage">
+        </div>
+        
+
+    </div>
+
+</body>
+</html>

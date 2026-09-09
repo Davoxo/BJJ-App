@@ -1,48 +1,52 @@
-/* Alapvető beállítások */
+
 body { 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    background-color: #f4f7f9; /* Nagyon halvány szürkéskék háttér */
+    background-color: #f4f7f9; 
     color: #333333; 
     margin: 0;
     padding: 20px; 
 }
 
-/* Főcím stílusa */
+
 .fo-cim {
     text-align: center;
-    color: #005bb5; /* Sötétkék */
+    color: #005bb5; 
     margin-bottom: 40px;
     font-size: 2.5em;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* A kártyák tartója (hogy középen legyenek) */
-.alkalmazas-tarolo {
-    max-width: 800px;
+
+.kartya-racs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
     margin: 0 auto;
+    align-items: start;
 }
 
-/* Egy technika kártya dizájnja */
-.technika-kartya { 
-    background-color: #ffffff; /* Hófehér belső */
-    padding: 30px; 
-    border-radius: 12px; 
-    border: 2px solid #007acc; /* Kék keret */
-    border-top: 8px solid #007acc; /* Vastagabb kék csík a tetején */
-    box-shadow: 0px 8px 15px rgba(0, 122, 204, 0.1); /* Halvány kék árnyék */
-    margin-bottom: 40px; /* Távolság a következő kártyától */
+/* ========================================= */
+/*         KIS KÁRTYÁK STÍLUSA               */
+/* ========================================= */
+
+.mini-kartya {
+    background-color: #ffffff;
+    border: 2px solid #007acc;
+    border-radius: 12px;
+    padding: 20px 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Finom animáció */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* Kártya címe */
-.technika-kartya h2 { 
-    color: #005bb5; 
-    margin-top: 0;
-    border-bottom: 2px dashed #e0e0e0;
-    padding-bottom: 10px;
-}
+/* Betűtípusok a kártyán belül */
+.japan-nev { font-weight: bold; font-size: 1.3em; color: #005bb5; }
+.magyar-nev { font-size: 0.9em; color: #666; margin-top: 5px; }
 
-/* Kis címkék (pl. Pozíció) */
+/* Kis kék címkék (pl. Pozíció) a leírásban */
 .cimke {
     display: inline-block;
     background-color: #e6f2ff;
@@ -51,13 +55,108 @@ body {
     border-radius: 20px;
     font-size: 0.85em;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin: 15px 0;
 }
 
-/* Videók és képek stílusa */
-img, video { 
+/* Hover (rámegy az egér) animáció a kártyán */
+.mini-kartya:hover {
+    transform: translateY(-5px); /* Kicsit felemelkedik */
+    box-shadow: 0 8px 15px rgba(0,122,204,0.3); /* Erősebb árnyék */
+}
+
+/* Kukucskáló kép: alapból nulla a magassága és láthatatlan */
+.kukucskalo {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.kukucskalo img, .kukucskalo video {
+    width: 100%;
+    height: 120px;
+    object-fit: cover; /* Levágja a kilógó részeket, hogy szép téglalap maradjon */
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* Amikor ráviszed az egeret, a kukucskáló kinyílik */
+.mini-kartya:hover .kukucskalo {
+    max-height: 150px;
+    opacity: 1;
+}
+
+/* A részletes szöveget és nagy képet elrejtjük a kis kártyán */
+.rejtett-leiras { 
+    display: none;
+    font-size: large;
+}
+
+/* ========================================= */
+/* FELUGRÓ ABLAK (MODAL) STÍLUSOK            */
+/* ========================================= */
+
+.modal-hatter {
+    display: none; /* Alapból rejtve van */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
     width: 100%; 
-    border-radius: 8px; 
-    margin-top: 15px; 
-    border: 1px solid #e0e0e0;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8); /* Sötétítő réteg */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-tartalom {
+    background-color: #fff;
+    padding: 45px;
+    border-radius: 12px;
+    max-width: 650px;
+    width: 90%;
+    position: relative;
+    max-height: 90vh; /* Ne lógjon le a képernyőről */
+    overflow-y: auto; /* Lehessen görgetni, ha hosszú a szöveg */
+    text-align: left; /* A nagy ablakban balra zárjuk a szöveget, könnyebb olvasni */
+}
+
+.bezar-gomb {
+    position: absolute; 
+    top: 10px; 
+    right: 20px;
+    font-size: 32px; 
+    cursor: pointer; 
+    color: #333; 
+    font-weight: bold;
+}
+
+.bezar-gomb:hover {
+    color: #ff3333; /* Piros lesz, ha ráviszed az egeret */
+}
+
+
+/* ========================================= */
+/* KERESŐSÁV STÍLUSA                         */
+/* ========================================= */
+.kereso-tarolo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#kereso {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #007acc;
+    border-radius: 25px; /* Szép kerekített szélű */
+    outline: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+#kereso:focus {
+    box-shadow: 0 6px 12px rgba(0,122,204,0.2);
+    max-width: 550px; /* Kattintáskor picit megnő a mező */
 }

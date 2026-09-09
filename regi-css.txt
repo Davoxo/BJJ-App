@@ -1,0 +1,63 @@
+/* Alapvető beállítások */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #f4f7f9; /* Nagyon halvány szürkéskék háttér */
+    color: #333333; 
+    margin: 0;
+    padding: 20px; 
+}
+
+/* Főcím stílusa */
+.fo-cim {
+    text-align: center;
+    color: #005bb5; /* Sötétkék */
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* A kártyák tartója (hogy középen legyenek) */
+.alkalmazas-tarolo {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Egy technika kártya dizájnja */
+.technika-kartya { 
+    background-color: #ffffff; /* Hófehér belső */
+    padding: 30px; 
+    border-radius: 12px; 
+    border: 2px solid #007acc; /* Kék keret */
+    border-top: 8px solid #007acc; /* Vastagabb kék csík a tetején */
+    box-shadow: 0px 8px 15px rgba(0, 122, 204, 0.1); /* Halvány kék árnyék */
+    margin-bottom: 40px; /* Távolság a következő kártyától */
+}
+
+/* Kártya címe */
+.technika-kartya h2 { 
+    color: #005bb5; 
+    margin-top: 0;
+    border-bottom: 2px dashed #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* Kis címkék (pl. Pozíció) */
+.cimke {
+    display: inline-block;
+    background-color: #e6f2ff;
+    color: #007acc;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Videók és képek stílusa */
+img, video { 
+    width: 100%; 
+    border-radius: 8px; 
+    margin-top: 15px; 
+    border: 1px solid #e0e0e0;
+}

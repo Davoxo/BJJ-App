@@ -10,30 +10,61 @@
 
     <h1 class="fo-cim">szajonvaglak.hu</h1>
 
-    <div class="alkalmazas-tarolo">
+<!-- Keresősáv -->
+<div class="kereso-tarolo">
+    <input type="text" id="kereso" placeholder="Keresés a technikák között (pl. Oki Goshi, csípő)..." onkeyup="keresesFuggveny()">
+</div>
 
-        <div class="technika-kartya">
-            <h2>Oki Goshi (Csípő dobás)</h2>
-            <span class="cimke">Pozíció: Csipő a csípőhöz</span>
+    <!-- A kártyák rácsa -->
+    <div class="kartya-racs">
+
+        <!-- 1. KÁRTYA: OKI GOSHI -->
+        <div class="mini-kartya" onclick="kartyaNagyitas(this)">
+            <div class="japan-nev">Oki Goshi</div>
+            <div class="magyar-nev">Csípő dobás</div>
             
-            <p>Ha bármi módón elég kezözel kerülsz az ellenfélhez, akkor a csípődet az ő csípője/dereka alá beakasztva ki tudod tolni a lábaddal a súlyát, és amikor a levegőben van onnan könnyen mozdítható a föld felé :D</p>
-            
-            <img src="images/oki-goshi.png" alt="oki-sohsi">
+            <!-- Ez nyílik le, ha ráviszed az egeret -->
+            <div class="kukucskalo">
+                <img src="images/oki-goshi.png" alt="Oki Goshi">
+            </div>
+
+            <!-- Ez a rész rejtve van, csak kattintás után, a nagy ablakban jelenik meg -->
+            <div class="rejtett-leiras">
+                <span class="cimke">Pozíció: Csipő a csípőhöz</span>
+                <p>Ha bármi módón elég kezözel kerülsz az ellenfélhez, akkor a csípődet az ő csípője/dereka alá beakasztva ki tudod tolni a lábaddal a súlyát, és amikor a levegőben van onnan könnyen mozdítható a föld felé :D</p>
+                <img src="images/oki-goshi.png" alt="Oki Goshi részletes" style="width: 100%; border-radius: 8px;">
+            </div>
         </div>
 
 
+        <!-- 2. KÁRTYA: TOMOE NAGE -->
+        <div class="mini-kartya" onclick="kartyaNagyitas(this)">
+            <div class="japan-nev">Tomoe Nage</div>
+            <div class="magyar-nev">Köríves dobás</div>
+            
+            <div class="kukucskalo">
+                <img src="images/tomoe-nage.png" alt="Tomoe Nage">
+            </div>
 
-        <div class="technika-kartya">
-            <h2>Tomoe Nage</h2>
-            <span class="cimke">Pozíció: Talp a belső combhoz</span>
-            
-            <p>AZ ellenfeled ruháját megragadva, bele taposol a belső combjába és hátra dőlsz teljes testtel miközben magara rántod az ellenfelet, ezután a lábaddal elrúgod magadtól amíg ő a levegőben van.</p>
-            
-            <img src="images/tomoe-nage.png" alt="tomoe-nage">
+            <div class="rejtett-leiras">
+                <span class="cimke">Pozíció: Talp a belső combhoz</span>
+                <p>Az ellenfeled ruháját megragadva, bele taposol a belső combjába és hátra dőlsz teljes testtel miközben magara rántod az ellenfelet, ezután a lábaddal elrúgod magadtól amíg ő a levegőben van.</p>
+                <img src="images/tomoe-nage.png" alt="Tomoe Nage részletes" style="width: 100%; border-radius: 8px;">
+            </div>
         </div>
         
-
     </div>
+
+    <!-- A rejtett felugró ablak (Modal) -->
+    <div class="modal-hatter" id="nagyito-ablak" onclick="ablakBezar()">
+        <div class="modal-tartalom" onclick="event.stopPropagation()">
+            <span class="bezar-gomb" onclick="ablakBezar()">&times;</span>
+            <div id="modal-belso"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript összekötése -->
+    <script src="script.js"></script>
 
 </body>
 </html>
