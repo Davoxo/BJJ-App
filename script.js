@@ -49,3 +49,13 @@ function keresesFuggveny() {
         }
     }
 }
+
+
+
+function menuNyitas() {
+    document.getElementById("oldal-menu").style.width = "260px";
+}
+
+function menuZaras() {
+    document.getElementById("oldal-menu").style.width = "0";
+}

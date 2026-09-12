@@ -160,3 +160,97 @@ body {
     box-shadow: 0 6px 12px rgba(0,122,204,0.2);
     max-width: 550px; /* Kattintáskor picit megnő a mező */
 }
+
+
+
+
+
+/* ========================================= */
+/* HAMBURGER GOMB ÉS VILÁGOS OLDALSÁV        */
+/* ========================================= */
+
+.hamburger-gomb {
+    font-size: 35px;
+    cursor: pointer;
+    color: #005bb5;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.hamburger-gomb:hover {
+    color: #007acc;
+    transform: scale(1.1); /* Picit megnő a gomb, ha ráviszed az egeret */
+}
+
+/* Világos, becsúszó oldalsáv */
+.oldalsav-vilagos {
+    height:100%;
+    width: 0; /* Kezdetben rejtve */
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    background-color: #ffffff; /* Fehér, mint a kártyák */
+    border-right: 2px solid #e6f2ff; /* Halványkék szegély */
+    overflow-x: hidden;
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Nagyon smooth animáció! */
+    padding-top: 30px;
+    box-shadow: 5px 0 15px rgba(0, 91, 181, 0.15); /* Halvány kékes árnyék */
+    white-space: nowrap; /* A szöveg ne törjön szét csúszás közben */
+}
+
+.menu-cim {
+    color: #005bb5;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    border-bottom: 2px solid #e6f2ff;
+    padding-bottom: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* Menüpontok (Fülek) */
+.oldalsav-vilagos a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #666;
+    display: block;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent; /* Készülünk a hoverre */
+}
+
+/* Smooth hover effekt */
+.oldalsav-vilagos a:hover {
+    background-color: #e6f2ff;
+    color: #007acc;
+    border-left: 4px solid #007acc; /* Kék csík jelenik meg a bal szélén */
+}
+
+/* Aktív fül (Mozdulatok) */
+.oldalsav-vilagos a.aktiv {
+    background-color: #007acc;
+    color: #ffffff;
+    border-left: 4px solid #004c99;
+}
+
+/* A piros X gomb */
+.oldalsav-vilagos .bezar-gomb-menu {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 36px;
+    padding: 0;
+    border: none;
+}
+
+.oldalsav-vilagos .bezar-gomb-menu:hover {
+    color: #ff3333;
+    background-color: transparent;
+    border: none;
+}
